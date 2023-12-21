@@ -1,6 +1,6 @@
 import './App.css'
 import {createBrowserRouter, defer, RouterProvider} from "react-router-dom";
-import Error404 from "./layouts/404.jsx";
+import Error404 from "./errors/404.jsx";
 import Layouts from "./layouts/layouts.jsx";
 import Home from "./layouts/home.jsx";
 
