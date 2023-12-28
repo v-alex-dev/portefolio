@@ -3,16 +3,15 @@ import {motion} from "framer-motion";
 
 const Layouts = () => {
     return (
-        <main className={"flex flex-row"}>
+        <main className={"flex flex-row h-screen"}>
             <motion.div
-                className={"w-1/5 border-r-2 border-b-2 rounded-br-2xl"}
+                className={"w-1/5 border-r-2 border-b-2 rounded-br-2xl h-1/3"}
                 id={"dashboard"}
                 initial={{x: -100}}
                 animate={{x: 0}}
                 transition={{
                     duration: 0.5,
-                    type: 'spring',
-
+                    type: 'tween',
                 }}
             >
                 <nav className={"flex flex-col justify-center mx-5 my-3 text-center"}>
