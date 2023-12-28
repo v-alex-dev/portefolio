@@ -7,12 +7,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        'wood': '#613F2E',
-        'brun': '#9F643C',
-        'taupe': '#CB8E62',
-        'beige': '#DEB887',
-        'sable': '#BA8052'
-      }
+        'blue':'#152837',
+        'orange':'#E69F34',
+        'light-orange':'#FFBD59',
+        'light-gray':'#F1F1F1',
+        'dark': '#000000'
+      },
     },
   },
   plugins: [],
