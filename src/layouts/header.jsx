@@ -13,7 +13,7 @@ const Header = () => {
                         type: "tween",
                         ease: "easeInOut"
                     }}
-                    className={"font-bold text-5xl text-orange w-2/3 mx-auto mb-4"}>Portfolio Alexandre Vens
+                    className={"font-bold text-5xl text-orange w-2/3 mx-auto mb-4 text-center"}>Portfolio Alexandre Vens
                 </motion.h1>
                 <motion.blockquote
                     initial={{opacity: -1}}
@@ -24,7 +24,7 @@ const Header = () => {
                         type: "tween",
                         ease: "easeInOut"
                     }}
-                    className={"font-bold text-2xl text-amber-50 w-2/3"}>
+                    className={"font-bold text-2xl text-amber-50 w-2/3 text-center"}>
                         Developer FrontEnd junior
                 </motion.blockquote>
             </header>
