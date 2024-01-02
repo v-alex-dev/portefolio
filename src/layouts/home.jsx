@@ -2,6 +2,7 @@ import Article from "../components/article.jsx";
 import {useEffect, useRef, useState} from "react";
 import {motion, useAnimation} from "framer-motion";
 import "../../public/descriptionTitle.svg";
+import AboutMe from "../components/aboutMe.jsx";
 import TitleSection from "../components/titleSection.jsx";
 
 const Home = () => {
@@ -48,7 +49,7 @@ const Home = () => {
                 'application devant des professionnels, démontrant une maîtrise complète du développement web.'
         },
         {
-            parcours: "Becode",
+            parcours: "BeCode",
             url: 'https://becode.org/fr/les-formations/junior-developer/',
             description:  '7 mois de formation intensive en développement web chez BeCode, avec un focus sur les compétences ' +
                 'tant front-end que back-end. Initiation complète aux technologies modernes telles que React et ' +
@@ -57,21 +58,26 @@ const Home = () => {
                 'de soft skills essentielles pour une carrière réussie en tant que développeur.'
         }
     ];
-    return (<div id="home" className={"w-full"}>
+    return (<div id="home" className={"w-full overflow-y-auto"}>
             <section id={"description"}
-                     className={"bg-white rounded md:p-4"}>
-                <TitleSection/>
-                <div id={"Parcours"} className={" md:flex md:justify-around my-8"}>
+                     className={"rounded md:p-4 relative md:my-10 my-20"}>
+                <TitleSection title={"About me"} urlIcon={"./descriptionTitle.svg"} />
+                <AboutMe/>
+
+            </section>
+            <section id={"formations" } className={"relative"}>
+                <TitleSection title={"Formations"} urlIcon={"./maison.svg"}/>
+                <div id={"Parcours"} className={" flex md:justify-around my-8 flex-col md:flex-row p-8"}>
                     {articleContent.map((item, index) => (<motion.a
                         ref={scrollRef}
                         initial={{ opacity: 0 }}
                         animate={controls}
-                            href={item.url}
-                            key={index}
-                            target={"_blank"}
-                            className={"bg-light-orange rounded-xl shadow-dark p-4 hover:shadow-2xl duration-150 md:w-1/3"}>
-                            <Article title={item.parcours} description={item.description} loading={loading}/>
-                        </motion.a>))}
+                        href={item.url}
+                        key={index}
+                        target={"_blank"}
+                        className={"bg-light-orange rounded-xl shadow-dark p-4 hover:shadow-2xl duration-150 md:w-1/3 w-full mt-8 overflow-y-auto h-72 md:h-auto"}>
+                        <Article title={item.parcours} description={item.description} loading={loading}/>
+                    </motion.a>))}
                 </div>
             </section>
             <section id={"skills"}>
