@@ -5,34 +5,36 @@ import Layouts from "./layouts/layouts.jsx";
 import Home from "./layouts/home.jsx";
 import Header from "./layouts/header.jsx";
 import Footer from "./layouts/footer.jsx";
+import ContactBarSmallScreen from "./components/contactBarSmallScreen.jsx";
 
 function App() {
-  const router = createBrowserRouter([
-    {
-      path: '/',
-      element: (
-          <>
-            <Layouts/>
-          </>
-      ),
-      errorElement: <Error404/>,
-      children: [
+    const router = createBrowserRouter([
         {
-          index: true,
-          element:<Home/>
-        },
-      ]
-    }
-  ])
+            path: '/',
+            element: (
+                <>
+                    <Layouts/>
+                </>
+            ),
+            errorElement: <Error404/>,
+            children: [
+                {
+                    index: true,
+                    element: <Home/>
+                },
+            ]
+        }
+    ])
 
 
-  return (
-    <>
-      <Header/>
-      <RouterProvider router={router}/>
-      <Footer/>
-    </>
-  )
+    return (
+        <>
+            <ContactBarSmallScreen/>
+            <Header/>
+            <RouterProvider router={router}/>
+            <Footer/>
+        </>
+    )
 }
 
 export default App

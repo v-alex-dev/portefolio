@@ -13,4 +13,9 @@
         clip-path: polygon(0% 0%, 100% 25%, 100% 100%, 0% 100%);
         z-index: -1; /* Pour placer le rectangle en arrière-plan de l'image */
     }
+
+}
+
+span {
+    font-weight: bold;
 }

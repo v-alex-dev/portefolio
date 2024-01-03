@@ -29,7 +29,7 @@ const Home = () => {
                 const scrollPosition = window.scrollY + window.innerHeight;
 
                 if (scrollPosition > elementTop) {
-                    controls.start({ opacity: 1 });
+                    controls.start({opacity: 1});
                 }
             }
         };
@@ -51,26 +51,27 @@ const Home = () => {
         {
             parcours: "BeCode",
             url: 'https://becode.org/fr/les-formations/junior-developer/',
-            description:  '7 mois de formation intensive en développement web chez BeCode, avec un focus sur les compétences ' +
+            description: '7 mois de formation intensive en développement web chez BeCode, avec un focus sur les compétences ' +
                 'tant front-end que back-end. Initiation complète aux technologies modernes telles que React et ' +
                 'l\'exploration continue avec NEXT.JS pour renforcer mes compétences front-end. La formation a mis ' +
                 'l\'accent sur l\'apprentissage actif, le travail d\'équipe, la gestion de projets, et le développement ' +
                 'de soft skills essentielles pour une carrière réussie en tant que développeur.'
         }
     ];
-    return (<div id="home" className={"w-full overflow-y-auto"}>
+    return (
+        <div id="home" className={"w-full overflow-y-auto"}>
             <section id={"description"}
                      className={"rounded md:p-4 relative md:my-10 my-20"}>
-                <TitleSection title={"About me"} urlIcon={"./descriptionTitle.svg"} />
+                <TitleSection title={"About me"} urlIcon={"./descriptionTitle.svg"}/>
                 <AboutMe/>
 
             </section>
-            <section id={"formations" } className={"relative"}>
+            <section id={"formations"} className={"relative my-20 bg-blue rounded"}>
                 <TitleSection title={"Formations"} urlIcon={"./maison.svg"}/>
                 <div id={"Parcours"} className={" flex md:justify-around my-8 flex-col md:flex-row p-8"}>
                     {articleContent.map((item, index) => (<motion.a
                         ref={scrollRef}
-                        initial={{ opacity: 0 }}
+                        initial={{opacity: 0}}
                         animate={controls}
                         href={item.url}
                         key={index}
@@ -86,7 +87,8 @@ const Home = () => {
             <section id={"soft-skills"}>
                 <h2>soft-skills</h2>
             </section>
-        </div>)
+        </div>
+    )
 }
 
 export default Home;
