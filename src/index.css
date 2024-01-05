@@ -17,5 +17,13 @@
 }
 
 span {
-    font-weight: bold;
+    @apply font-bold
 }
+
+.divMain {
+    @apply grid grid-cols-2 justify-items-center md:w-full gap-2 md:gap-4 items-center justify-center bg-light-gray p-4 rounded-2xl relative md:mt-10  mx-8
+}
+.divMainClose {
+    @apply flex md:w-full gap-2 md:gap-4 items-center justify-center bg-light-gray p-4 rounded-2xl relative md:mb-10 mx-8
+}
+
