@@ -21,17 +21,16 @@ const articleContent = [
             'de soft skills essentielles pour une carrière réussie en tant que développeur.'
     }
 ];
-const ListFormations = ({scrollRef, controls, loading}) => {
+const ListFormations = ({loading}) => {
   return(
       <div id={"Parcours"} className={" flex md:justify-around my-8 flex-col md:flex-row p-8"}>
           {articleContent.map((item, index) => (<motion.a
-              ref={scrollRef}
-              initial={{opacity: 0}}
-              animate={controls}
               href={item.url}
+              whileHover={{ scale: 1.1}}
+              whileTap={{scale:1}}
               key={index}
               target={"_blank"}
-              className={"bg-light-orange rounded-xl shadow-dark p-4 hover:shadow-2xl duration-150 md:w-1/3 w-full mt-8 overflow-y-auto h-72 md:h-auto"}>
+              className={"bg-light-orange rounded-xl p-4 duration-150 md:w-1/3 w-full mt-8 overflow-y-auto h-72 md:h-auto hover:shadow-black hover:shadow-lg"}>
               <Article title={item.parcours} description={item.description} loading={loading}/>
           </motion.a>))}
       </div>

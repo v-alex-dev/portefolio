@@ -33,9 +33,18 @@ const AboutMe = () => {
     return (
         <div className={styleDivMain()}>
             {screenWidth > maxMobileWidth && (
-                <div className={`w-48  `}>
+                <motion.div
+                    initial={{ opacity: 0, height: 0 }}
+                    animate={{ opacity: 1, height: "auto" }}
+                    exit={{ opacity: 0, height: 0 }}
+                    transition={{
+                        opacity: { duration: 1.2 }, // Adjust the duration as needed
+                        height: { duration: 1},
+                        exit:{ duration:1},
+                    }}
+                    className={`w-48  `}>
                     <img src={'./src/assets/PhotCV.jpg'} alt={'Alexandre'} className={`md:w-full rounded-full`}/>
-                </div>
+                </motion.div>
             )}
 
             <div className={styleModal()}>
@@ -61,7 +70,10 @@ const AboutMe = () => {
                         }}
                         >
 
-                        <motion.p initial={{opacity:0, y:-100}} animate={{opacity:1,y:0}} transition={{type:"tween", duration:1}}>
+                        <motion.p
+                            initial={{opacity:0, y:-100}}
+                            animate={{opacity:1,y:0}}
+                            transition={{type:"tween", duration:1}}>
                             Ayant commencé ma carrière professionnelle en tant que chauffeur, ma passion pour
                             l'informatique
                             m'a

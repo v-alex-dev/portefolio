@@ -1,4 +1,3 @@
-
 import {useEffect, useRef, useState} from "react";
 import {motion, useAnimation} from "framer-motion";
 import "../../public/descriptionTitle.svg";
@@ -6,11 +5,30 @@ import AboutMe from "../components/aboutMe.jsx";
 import TitleSection from "../components/titleSection.jsx";
 import ListFormations from "../components/listFormations.jsx";
 import Skills from "../components/skils.jsx";
+import inView from 'in-view';
+import {currentSkills, casualSkills, softSkills} from "../utils/all-skills.js";
+import SoftSkills from "../components/soft-skills.jsx";
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
     const controls = useAnimation();
     const scrollRef = useRef(null);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (inView.is(scrollRef.current)) {
+                controls.start({ opacity: 1 });
+            }
+        };
+
+        inView(scrollRef.current, () => {
+            controls.start({ opacity: 1 });
+        });
+
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [controls]);
+
 
     useEffect(() => {
         const fetchData = async () => {
@@ -24,42 +42,56 @@ const Home = () => {
             }
         };
         fetchData();
-        const handleScroll = () => {
-            const element = scrollRef.current;
-            if (element) {
-                const elementTop = element.offsetTop;
-                const scrollPosition = window.scrollY + window.innerHeight;
 
-                if (scrollPosition > elementTop) {
-                    controls.start({opacity: 1});
-                }
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, [controls]);
+    }, []);
 
 
     return (
         <div id="home" className={"w-full overflow-y-auto"}>
             <section id={"description"}
-                     className={"rounded relative md:my-10 my-20 md:pt-8"}>
+
+                     className={"rounded relative md:py-10 py-20 md:mt-24"}>
                 <TitleSection title={"About me"} urlIcon={"./descriptionTitle.svg"}/>
                 <AboutMe/>
 
             </section>
-            <section id={"formations"} className={"relative my-20 bg-blue rounded"}>
+            <motion.section id={"formations"}
+                            ref={scrollRef}
+                            initial={{opacity:0}}
+                            whileInView={{opacity:1}}
+                        className={"relative py-20 bg-blue rounded border-b border-black"}>
                 <TitleSection title={"Formations"} urlIcon={"./maison.svg"}/>
-                <ListFormations controls={controls}  scrollRef={scrollRef} loading={loading}/>
-            </section>
-            <section id={"skills"} className={"relative my-20"}>
+                <ListFormations loading={loading}/>
+            </motion.section>
+            <motion.section
+                ref={scrollRef}
+                initial={{opacity:0}}
+                whileInView={{opacity:1, transition: { delay: 0.5 }}}
+                id={"soft-skills"}
+                className={"relative py-20 bg-blue rounded"}>
+                <TitleSection title={"Soft-Skills"} urlIcon={"./star-regular.svg"}/>
+                <motion.div
+                    className={"pt-10 text-white font-bold flex flex-wrap justify-center"}>
+                    {softSkills.map((item, index) => (
+                        <SoftSkills
+                            title={item.title}
+                            description={item.description}
+                            imgSrc={item.imgSrc}
+                            index={index}/>
+                    ))}
+                </motion.div>
+            </motion.section>
+            <motion.section
+                initial={{opacity: 0}}
+                whileInView={{opacity:1}}
+                id={"skills"} className={"relative py-20"}>
                 <TitleSection title={"Skills"} urlIcon={"./gears-solid.svg"}/>
-                <Skills/>
-            </section>
-            <section id={"soft-skills"}>
-                <h2>soft-skills</h2>
-            </section>
+                <div className={"pt-8 grid grid-cols-2 justify-items-center"}>
+                    <Skills skills={currentSkills} title={"Current skills"} initialX={-150}/>
+                    <Skills skills={casualSkills} title={"Casual Skills"} initialX={150}/>
+                </div>
+            </motion.section>
+
         </div>
     )
 }
