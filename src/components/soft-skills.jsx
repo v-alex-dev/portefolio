@@ -4,7 +4,7 @@ import {motion} from "framer-motion";
 const SoftSkills = ({title, imgSrc, description, index}) => {
     return (
         <motion.div
-            key={index} className={"flex flex-col gap-3 justify-center items-center p-8 md:w-1/2"}>
+            className={"flex flex-col gap-3 justify-center items-center p-8 md:w-1/2"}>
             <motion.div
                 className={"flex flex-col justify-center items-center"}
 

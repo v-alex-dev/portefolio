@@ -77,7 +77,7 @@ const Home = () => {
                             title={item.title}
                             description={item.description}
                             imgSrc={item.imgSrc}
-                            index={index}/>
+                            key={index}/>
                     ))}
                 </motion.div>
             </motion.section>
