@@ -1,19 +1,30 @@
-import { Link } from "react-router-dom";
 import cv from "../assets/alexandre-vens-cv.pdf";
+import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-dom";
+import FormContactMe from "../components/formContactMe.jsx";
 
 const Footer = () => {
   return(
+    <Router>
       <footer className="bg-blue">
-          <div>
-            <nav className="flex justify-between max-w-4xl p-4 mx-auto text-sm md:p-8">
-              <ul>
-                <li><a href="https://www.linkedin.com/in/vens-alexandre/" target="_blank" rel="noreferrer">My profile <img src="../src/assets/square-github.svg" alt="github"/></a></li>
-                <li>Download : <a href={cv} download>My CV</a></li>
-              </ul>
-            </nav>
-          </div>
+        <div>
+          <nav className="flex justify-between max-w-4xl p-4 mx-auto text-sm md:p-8">
+            <ul className="font-bold text-white">
+              <li>
+                <NavLink to="/contact" className="link-hover-text">
+                  Contact Me
+                </NavLink>
+              </li>
+              <li>
+                <a href={cv} download className="link-hover-text">My CV</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <Routes>
+          <Route path="/contact" element={<FormContactMe />} />
+        </Routes>
       </footer>
+    </Router>
   )
 }
-
 export default Footer;

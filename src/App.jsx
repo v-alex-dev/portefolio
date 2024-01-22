@@ -5,7 +5,6 @@ import Layouts from "./layouts/layouts.jsx";
 import Home from "./layouts/home.jsx";
 import Header from "./layouts/header.jsx";
 import Footer from "./layouts/footer.jsx";
-import ContactBarSmallScreen from "./components/contactBarSmallScreen.jsx";
 
 function App() {
     const router = createBrowserRouter([
@@ -29,7 +28,6 @@ function App() {
 
     return (
         <>
-            <ContactBarSmallScreen/>
             <Header/>
             <RouterProvider router={router}/>
             <Footer/>
