@@ -1,25 +1,30 @@
 import express from 'express';
-
 import path from 'path';
 import nodemailer from 'nodemailer';
 import cors from 'cors'; 
-const app = express();
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import { config } from 'dotenv';
+import { log } from 'console';
+config();
 
+const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 app.use(cors());
-app.use(express.static(path.join(__dirname, 'client/build')));
+app.use(express.static(path.join(__dirname, 'dist')));
+app.use(express.json());
 // Serve static files from the React frontend app
 // Put all API endpoints under '/api'
-app.get('/api/send-email', (req, res) => {
-	// Create a transporter object with your email service provider's SMTP settings
+
+app.post('/api/send-email', (req, res) => {
+
+	console.log(process.env.EMAIL, process.env.PASSWORD);
 	const transporter = nodemailer.createTransport({
-		service: 'gmail',
+		service: 'hotmail',
 		auth: {
-			user: import.meta.env.VITE_EMAIL,
-			pass: import.meta.env.VITE_PASSWORD
+			user:process.env.EMAIL,
+			pass:process.env.PASSWORD
 		}
 	});
 
@@ -45,9 +50,6 @@ app.get('/api/send-email', (req, res) => {
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
-});
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {

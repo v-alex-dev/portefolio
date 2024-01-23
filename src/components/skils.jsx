@@ -14,15 +14,15 @@ const Skills = ({skills, title, initialX}) => {
                           className={"grid grid-rows-2 justify-items-center items-center p-4"}
                           initial={{opacity:0, x:initialX}}
                           whileInView={{opacity:1, x:0}}
-                          exit={{opacity:1}}
-                          transition={{duration:1, delay:(index+1)/2, type:"spring"}}
+                          transition={{duration:1, delay:(index+1)/4, type:"spring"}}
+                          viewport={{once:true}}
                       >
                           <img src={skill.urlImg} alt={skill.name} className={"w-20"}/>
                           <motion.p
                               initial={{opacity:0}}
                               whileInView={{opacity:1}}
-                              exit={{opacity:1}}
-                              transition={{delay:(index+1.5)/2, duration:1}}
+                              transition={{delay:(index+1.5)/5, duration:1, type:"spring"}}
+                              viewport={{once:true}}
                               className={"text-blue font-bold"}>{skill.name}</motion.p>
                       </motion.article>
                   ))}

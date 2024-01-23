@@ -64,9 +64,6 @@ const Home = () => {
                 <ListFormations loading={loading}/>
             </motion.section>
             <motion.section
-                ref={scrollRef}
-                initial={{opacity:0}}
-                whileInView={{opacity:1, transition: { delay: 0.5 }}}
                 id={"soft-skills"}
                 className={"relative py-20 bg-blue rounded"}>
                 <TitleSection title={"Soft-Skills"} urlIcon={"./star-regular.svg"}/>
