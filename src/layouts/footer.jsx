@@ -23,12 +23,12 @@ const Footer = () => {
               </li>
               <li>
                 <a href="https://github.com/v-alex-dev" className="" target="_blank">
-                  <img src="../src/assets/github.svg" alt="github" className="md:w-10 w-5 bg-orange rounded-full p-1 hover:scale-125 duration-200 "/>
+                  <img src="./assets/github.svg" alt="github" className="md:w-10 w-5 bg-orange rounded-full p-1 hover:scale-125 duration-200 "/>
                 </a>
                 </li>
               <li>
                 <a href="https://www.linkedin.com/in/vens-alexandre/" className="w-full" target="_bank">
-                  <img src="../src/assets/linkledin.svg" alt="linkledin"  className="md:w-10 w-5 bg-orange rounded-lg hover:scale-125 duration-200"/>
+                  <img src="./assets/linkledin.svg" alt="linkledin"  className="md:w-10 w-5 bg-orange rounded-lg hover:scale-125 duration-200"/>
                 </a>
               </li>
           
