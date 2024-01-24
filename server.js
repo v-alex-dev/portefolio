@@ -51,7 +51,7 @@ app.post('/api/send-email', (req, res) => {
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 app.listen(port, () => {
   console.log(`Server is up and running on port ${port}`);
 });
