@@ -3,6 +3,7 @@ import useWidthScreen from '../hooks/w-screen.js';
 import { motion } from "framer-motion"; // Add the import statement for the motion component
 import GallerieAboutMe from './gallerieAboutMe.jsx';
 import TextOnMe from './textOnMe.jsx';
+import photoMe from '../assets/PhotCV.jpg';
 
 const AboutMe = () => {
   const screenWidth = useWidthScreen();
@@ -52,7 +53,7 @@ const AboutMe = () => {
             exit: { duration: 1 },
           }}
           className={`w-48  `}>
-          <img src={'./src/assets/PhotCV.jpg'} alt={'Alexandre'} className={`md:w-full rounded-full`} />
+          <img src={photoMe} alt={'Alexandre'} className={`md:w-full rounded-full`} />
         </motion.div>
       )}
 
