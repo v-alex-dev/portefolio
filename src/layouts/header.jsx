@@ -1,10 +1,12 @@
 import {motion} from "framer-motion";
+import HamburgerMenu from "../components/hamburgerMenu";
 
 const Header = () => {
 
     return (
         <>
             <header className={"h-96 md:h-56 flex flex-col items-center justify-center  bg-blue"}>
+            <HamburgerMenu/>
                 <motion.h1
                     initial={{x:-500, opacity:0}}
                     animate={{x:0, opacity:1}}

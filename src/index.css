@@ -28,7 +28,7 @@ span {
 }
 
 .link-hover-text:hover {
-    @apply text-light-orange text-lg duration-500
+    @apply text-light-orange scale-125 duration-500
 }
 
 .input-form {
@@ -41,4 +41,31 @@ span {
 
 .btn-popup {
     @apply bg-light-orange text-white rounded-full p-2 font-bold
+}
+.modalAboutMe{
+   @apply fixed top-0 left-0 w-screen h-screen bg-opacity-50 flex justify-center items-center z-50 bg-dark
+}
+
+.hamburger{
+    @apply flex flex-col justify-center items-center gap-1 p-2
+  }
+
+.bar {
+    @apply bg-dark h-1 w-1/2 rounded-full hover:bg-white duration-500
+}
+
+.menu-text{
+  @apply text-white font-bold hover:text-black duration-500
+}
+
+.menu-list{
+  @apply flex flex-col gap-2 items-center justify-center p-4
+}
+
+.menu{
+  @apply flex flex-col gap-2 items-center justify-center p-4 bg-orange z-50 fixed top-0 right-0 mr-3 rounded-xl mt-2
+}
+
+.open{
+  @apply w-20 flex flex-col gap-2 items-center justify-center p-4  z-50 h-20
 }

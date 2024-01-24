@@ -7,7 +7,7 @@ const Skills = ({skills, title, initialX}) => {
 
           <div>
               <h3 className={"text-blue text-2xl font-bold text-center my-8"}>{title}</h3>
-              <div className={"grid grid-cols-3 gap-3 justify-items-center"}>
+              <div className={"grid grid-cols-2 md:grid-cols-3 gap-3 justify-items-center"}>
                   {skills.map((skill, index) => (
                       <motion.article
                           key={index}

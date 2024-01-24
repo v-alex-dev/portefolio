@@ -83,7 +83,7 @@ const Home = () => {
                 whileInView={{opacity:1}}
                 id={"skills"} className={"relative py-20"}>
                 <TitleSection title={"Skills"} urlIcon={"./gears-solid.svg"}/>
-                <div className={"pt-8 grid grid-cols-2 justify-items-center"}>
+                <div className={"pt-8 md:grid md:grid-cols-2 md:justify-items-center flex flex-col"}>
                     <Skills skills={currentSkills} title={"Current skills"} initialX={-150}/>
                     <Skills skills={casualSkills} title={"Casual Skills"} initialX={150}/>
                 </div>
