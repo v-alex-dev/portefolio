@@ -1,6 +1,6 @@
 import nodemailer from 'nodemailer';
 
-app.post('/api/send-email', (req, res) => {
+export default  async (req, res) => {
 	// Create the transporter with the required configuration for Outlook
 	const transporter = nodemailer.createTransport({
 		service: 'Outlook',
@@ -18,14 +18,13 @@ app.post('/api/send-email', (req, res) => {
 		text: req.body.text
 	};
 
-	// Send the email
-	transporter.sendMail(mailOptions, (error, info) => {
-		if (error) {
-			console.log(error);
-			res.status(500).send('Error sending email');
-		} else {
-			console.log('Email sent: ' + info.response);
-			res.send('Email sent successfully');
-		}
-	});
-});
+	try {
+		// Send the email
+		const info = await transporter.sendMail(mailOptions);
+		console.log('Email sent: ' + info.response);
+		res.send('Email sent successfully');
+	} catch (error) {
+		console.log(error);
+		res.status(500).send('Error sending email');
+	}
+};

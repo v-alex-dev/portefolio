@@ -1,6 +1,5 @@
 import express from 'express';
 import path from 'path';
-import nodemailer from 'nodemailer';
 import cors from 'cors'; 
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
