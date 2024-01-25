@@ -51,7 +51,7 @@ const Home = () => {
             <section id={"description"}
 
                      className={"rounded relative md:py-10 py-20 md:mt-24"}>
-                <TitleSection title={"A propos de m"} urlIcon={"./descriptionTitle.svg"}/>
+                <TitleSection title={"A propos de moi"} urlIcon={"./descriptionTitle.svg"}/>
                 <AboutMe/>
 
             </section>
