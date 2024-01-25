@@ -21,7 +21,7 @@ const FormContactMe = () => {
 			return;
 		}
 		try {
-			fetch('http://localhost:3000/api/send-email', {
+			fetch('/api/send-email', {
 			'method': 'POST',
 			'headers': { 'Content-Type': 'application/json' },
 			'body': JSON.stringify({ 'from': name, 'to': email, 'subject': company, 'text': message })
