@@ -51,7 +51,7 @@ const Home = () => {
             <section id={"description"}
 
                      className={"rounded relative md:py-10 py-20 md:mt-24"}>
-                <TitleSection title={"About me"} urlIcon={"./descriptionTitle.svg"}/>
+                <TitleSection title={"A propos de m"} urlIcon={"./descriptionTitle.svg"}/>
                 <AboutMe/>
 
             </section>
@@ -85,7 +85,7 @@ const Home = () => {
                 <TitleSection title={"Skills"} urlIcon={"./gears-solid.svg"}/>
                 <div className={"pt-8 md:grid md:grid-cols-2 md:justify-items-center flex flex-col"}>
                     <Skills skills={currentSkills} title={"Current skills"} initialX={-150}/>
-                    <Skills skills={casualSkills} title={"Casual Skills"} initialX={150}/>
+                    <Skills skills={casualSkills} title={"Casual skills"} initialX={150}/>
                 </div>
             </motion.section>
 
