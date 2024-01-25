@@ -6,13 +6,13 @@ const Skills = ({skills, title, initialX}) => {
   return(
 
           <div>
-              <h3 className={"text-blue text-2xl font-bold text-center my-8"}>{title}</h3>
-              <div className={"grid grid-cols-2 md:grid-cols-3 gap-3 justify-items-center"}>
+              <h3 className={"text-white text-2xl font-bold text-center my-8"}>{title}</h3>
+              <div className={"grid grid-cols-2 md:grid-cols-5 gap-2 justify-items-center"}>
                   {skills.map((skill, index) => (
                       <motion.article
                           key={index}
                           className={"grid grid-rows-2 justify-items-center items-center p-4"}
-                          initial={{opacity:0, x:initialX}}
+                          initial={{opacity:0,}}
                           whileInView={{opacity:1, x:0}}
                           transition={{duration:1, delay:(index+1)/4, type:"spring"}}
                           viewport={{once:true}}
@@ -23,7 +23,7 @@ const Skills = ({skills, title, initialX}) => {
                               whileInView={{opacity:1}}
                               transition={{delay:(index+1.5)/5, duration:1, type:"spring"}}
                               viewport={{once:true}}
-                              className={"text-blue font-bold"}>{skill.name}</motion.p>
+                              className={"text-white font-bold"}>{skill.name}</motion.p>
                       </motion.article>
                   ))}
               </div>

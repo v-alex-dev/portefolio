@@ -53,18 +53,25 @@ const AboutMe = () => {
             exit: { duration: 1 },
           }}
           className={`w-48  `}>
-          <img src={photoMe} alt={'Alexandre'} className={`md:w-full rounded-full`} />
+          <motion.img 
+          src={photoMe} 
+          alt={'Alexandre'} 
+          className={`md:w-full rounded-full`} 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{delay:1.5, duration:1}}
+          />
         </motion.div>
       )}
 
       <div className={"text-center py-10"}>
-        <motion.div className={"flex flex-col items-center gap-8 p-4"} >
+        <motion.div className={"flex flex-col items-center gap-8 p-4 text-xl font-bold text-blue"} >
           <p>Développeur junior à la recherche de vos futurs bugs !</p>
 
           <button
             type={"button"}
             onClick={toggleModal}
-            className={"rounded-full shadow shadow-light-orange w-20 active:bg-light-orange active:text-white"}>Read me</button>
+            className={"rounded-full shadow shadow-light-orange p-2 bg-light-orange text-white font-bold active:bg-blue active:text-white"}>En savoir +</button>
         </motion.div>
       </div>
 

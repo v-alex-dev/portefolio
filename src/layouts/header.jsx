@@ -27,7 +27,7 @@ const Header = () => {
                         ease: "easeInOut"
                     }}
                     className={"font-bold text-2xl text-amber-50 w-2/3 text-center"}>
-                        Developer FrontEnd junior
+                         Front-End Developer junior
                 </motion.blockquote>
             </header>
         </>

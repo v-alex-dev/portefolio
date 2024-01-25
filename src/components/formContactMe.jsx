@@ -61,7 +61,7 @@ const FormContactMe = () => {
 							{/* Honeypot field for anti-bot security */}
 							<input type="text" name="honeypot" style={{ display: 'none' }} />
 
-							<button type="submit" className='btn-popup' disabled={isLoading}>
+							<button type="submit" className='btn-popup' disabled={isLoading}>Envoyer
 							</button>
 						</form>
 					)}

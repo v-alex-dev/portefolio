@@ -3,38 +3,65 @@ import { BrowserRouter as Router, Routes, Route, NavLink } from "react-router-do
 import FormContactMe from "../components/formContactMe.jsx";
 import github from "../assets/github.svg";
 import linkedin from "../assets/linkledin.svg";
+import { motion } from "framer-motion";
+
 const Footer = () => {
-  return(
+  return (
     <Router>
-      <footer className="bg-blue">
-        <div className="flex flex-col md:flex-row justify-center items-center">
-          <div className="flex justify-center items-center w-3/4 relative">
-            <p className="text-white font-bold text-left md:absolute">Created by Vens Alexandre</p>
-          </div>
-          <div className="flex justify-between max-w-4xl p-4 mx-auto text-sm md:p-8">
-            <ul className="font-bold text-white flex flex-col gap-4 items-center">
-            
-              <li>
-                <NavLink to="/contact" className="link-hover-text">
-                  Contact Me
+      <footer className="bg-blue pb-5">
+        <div className="flex justify-between max-w-4xl p-4 mx-auto text-sm md:p-8 w-1/2">
+          <ul className="font-bold text-white flex  gap-4 items-center w-full justify-between">
+            <li>
+              <div>
+                <NavLink
+                  to="/contact"
+                  className="link-hover-text ">
+                  Contactez moi
                 </NavLink>
-              </li>
-              <li>
-                <a href={cv} download className="link-hover-text">My CV</a>
-              </li>
-              <li>
+              </div>
+            </li>
+            <motion.div 
+            initial={{opacity:0, rotate:290}}
+            whileInView={{opacity:1, rotate:0}}
+            transition={{duration:2, delay:0.5, type:"tween", ease:"easeInOut"}}
+            viewport={{once:true}}
+            className="h-8 w-0.5 bg-orange rounded-full"></motion.div>
+            <li>
+              <div>
+                <a href={cv} download className="link-hover-text">Mon CV</a>
+
+              </div>
+            </li>
+            <motion.div 
+            initial={{opacity:0, rotate:290}}
+            whileInView={{opacity:1, rotate:0}}
+            transition={{duration:2, delay:0.5, type:"tween", ease:"easeInOut"}}
+            viewport={{once:true}}
+            className="h-8 w-0.5 bg-orange rounded-full"></motion.div>
+            <li className="">
+              <div>
                 <a href="https://github.com/v-alex-dev" className="" target="_blank">
-                  <img src={github} alt="github" className="md:w-10 w-5 bg-orange rounded-full p-1 hover:scale-125 duration-200 "/>
+                  <img
+                    src={github}
+                    alt="github"
+                    className="md:w-10 w-5 bg-orange rounded-full p-1 hover:scale-125 duration-200 " />
                 </a>
-                </li>
-              <li>
+              </div>
+            </li>
+            <motion.div 
+            initial={{opacity:0, rotate:290}}
+            whileInView={{opacity:1, rotate:0}}
+            transition={{duration:2, delay:0.5, type:"tween", ease:"easeInOut"}}
+            viewport={{once:true}}
+            className="h-8 w-0.5 bg-orange rounded-full"></motion.div>
+            <li className="">
+              <div>
                 <a href="https://www.linkedin.com/in/vens-alexandre/" className="w-full" target="_bank">
-                  <img src={linkedin} alt="linkedin"  className="md:w-10 w-5 bg-orange rounded-lg hover:scale-125 duration-200"/>
+                  <img src={linkedin} alt="linkedin" className="md:w-10 w-5 bg-orange rounded-lg hover:scale-125 duration-200" />
                 </a>
-              </li>
-          
-            </ul>
-          </div>
+              </div>
+            </li>
+          </ul>
         </div>
         <Routes>
           <Route path="/contact" element={<FormContactMe />} />

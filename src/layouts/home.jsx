@@ -50,25 +50,27 @@ const Home = () => {
         <div id="home" className={"w-full overflow-y-auto"}>
             <section id={"description"}
 
-                     className={"rounded relative md:py-10 py-20 md:mt-24"}>
-                <TitleSection title={"A propos de moi"} urlIcon={"./descriptionTitle.svg"}/>
+                     className={"rounded relative md:py-10 py-20 md:mt-6"}>
+                <TitleSection title={"A propos"} urlIcon={"./descriptionTitle.svg"}/>
                 <AboutMe/>
 
             </section>
-            <motion.section id={"formations"}
-                            ref={scrollRef}
-                            initial={{opacity:0}}
-                            whileInView={{opacity:1}}
-                        className={"relative py-20 bg-blue rounded border-b border-black"}>
-                <TitleSection title={"Formations"} urlIcon={"./maison.svg"}/>
-                <ListFormations loading={loading}/>
+            <motion.section
+                initial={{opacity: 0}}
+                whileInView={{opacity:1}}
+                id={"skills"} className={"relative py-20 bg-blue"}>
+                <TitleSection title={"Skills"} urlIcon={"./gears-solid.svg"}/>
+                <div className={"pt-8 flex flex-col "}>
+                    <Skills skills={currentSkills} title={"Current skills"} initialX={-150}/>
+                    <Skills skills={casualSkills} title={"Occasional skills"} initialX={150}/>
+                </div>
             </motion.section>
             <motion.section
                 id={"soft-skills"}
-                className={"relative py-20 bg-blue rounded"}>
+                className={"relative py-20 bg-light-gray rounded"}>
                 <TitleSection title={"Soft-Skills"} urlIcon={"./star-regular.svg"}/>
                 <motion.div
-                    className={"pt-10 text-white font-bold flex flex-wrap justify-center"}>
+                    className={"pt-10 text-blue font-bold flex flex-wrap justify-center"}>
                     {softSkills.map((item, index) => (
                         <SoftSkills
                             title={item.title}
@@ -78,15 +80,13 @@ const Home = () => {
                     ))}
                 </motion.div>
             </motion.section>
-            <motion.section
-                initial={{opacity: 0}}
-                whileInView={{opacity:1}}
-                id={"skills"} className={"relative py-20"}>
-                <TitleSection title={"Skills"} urlIcon={"./gears-solid.svg"}/>
-                <div className={"pt-8 md:grid md:grid-cols-2 md:justify-items-center flex flex-col"}>
-                    <Skills skills={currentSkills} title={"Current skills"} initialX={-150}/>
-                    <Skills skills={casualSkills} title={"Casual skills"} initialX={150}/>
-                </div>
+            <motion.section id={"formations"}
+                            ref={scrollRef}
+                            initial={{opacity:0}}
+                            whileInView={{opacity:1}}
+                        className={"relative py-20 bg-blue rounded border-b border-black"}>
+                <TitleSection title={"Formations"} urlIcon={"./maison.svg"}/>
+                <ListFormations loading={loading}/>
             </motion.section>
 
         </div>
