@@ -15,7 +15,7 @@ const Footer = () => {
               <div>
                 <NavLink
                   to="/contact"
-                  className="link-hover-text ">
+                  className="link-hover-text text-orange">
                   Contactez moi
                 </NavLink>
               </div>
@@ -28,7 +28,7 @@ const Footer = () => {
             className="h-8 w-0.5 bg-orange rounded-full"></motion.div>
             <li>
               <div>
-                <a href={cv} download className="link-hover-text">Mon CV</a>
+                <a href={cv} download className="link-hover-text text-orange">Mon CV</a>
 
               </div>
             </li>
@@ -44,7 +44,7 @@ const Footer = () => {
                   <img
                     src={github}
                     alt="github"
-                    className="md:w-10 w-5 bg-orange rounded-full p-1 hover:scale-125 duration-200 " />
+                    className="md:w-10 w-5 bg-orange rounded-full p-1 hover:bg-white duration-200 " />
                 </a>
               </div>
             </li>
@@ -57,7 +57,7 @@ const Footer = () => {
             <li className="">
               <div>
                 <a href="https://www.linkedin.com/in/vens-alexandre/" className="w-full" target="_bank">
-                  <img src={linkedin} alt="linkedin" className="md:w-10 w-5 bg-orange rounded-lg hover:scale-125 duration-200" />
+                  <img src={linkedin} alt="linkedin" className="md:w-10 w-5 bg-orange rounded-lg hover:bg-white duration-200" />
                 </a>
               </div>
             </li>

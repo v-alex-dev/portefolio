@@ -5,7 +5,7 @@ import sql from '../assets/database-solid.svg';
 import react from '../assets/react.svg';
 import nextjs from '../assets/next-js.svg';
 import tailwind from '../assets/tailwind.svg';
-import git from '../assets/github.svg';
+import github from '../assets/github.svg';
 import figma from '../assets/figma-icon.svg';
 import csharp from '../assets/c-sharp.svg';
 import dotnet from '../assets/dotnet-icon.svg';
@@ -16,6 +16,7 @@ import php from '../assets/new-php-logo.svg';
 import team from '../assets/noun-teamwork-1696074.svg';
 import customer from '../assets/noun-customer-oriented-2123208.svg';
 import learner from '../assets/noun-learner-4693255.svg';
+import git from '../assets/git.svg';
 
 export  const currentSkills =
     [

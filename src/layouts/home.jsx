@@ -48,9 +48,8 @@ const Home = () => {
 
     return (
         <div id="home" className={"w-full overflow-y-auto"}>
-            <section id={"description"}
-
-                     className={"rounded relative md:py-10 py-20 md:mt-6"}>
+            <section 
+                     className={"rounded relative md:py-10 py-20 bg-opacity-50 bg-gray-400 "}>
                 <TitleSection title={"A propos"} urlIcon={"./descriptionTitle.svg"}/>
                 <AboutMe/>
 
@@ -58,16 +57,16 @@ const Home = () => {
             <motion.section
                 initial={{opacity: 0}}
                 whileInView={{opacity:1}}
-                id={"skills"} className={"relative py-20 bg-blue"}>
+                className={"relative py-20 bg-blue"}>
                 <TitleSection title={"Skills"} urlIcon={"./gears-solid.svg"}/>
-                <div className={"pt-8 flex flex-col "}>
-                    <Skills skills={currentSkills} title={"Current skills"} initialX={-150}/>
-                    <Skills skills={casualSkills} title={"Occasional skills"} initialX={150}/>
+                <div className={"pt-8 flex flex-col items-center"}>
+                    <Skills skills={currentSkills} title={"Current skills"} initialX={-150} isFoward/>
+                    <div className="h-0.5 shadow-xl w-1/2 my-20 bg-light-orange"></div>
+                    <Skills skills={casualSkills} title={"Occasional"} initialX={150}/>
                 </div>
             </motion.section>
             <motion.section
-                id={"soft-skills"}
-                className={"relative py-20 bg-light-gray rounded"}>
+                className={"relative py-20 bg-opacity-50 bg-gray-600 rounded"}>
                 <TitleSection title={"Soft-Skills"} urlIcon={"./star-regular.svg"}/>
                 <motion.div
                     className={"pt-10 text-blue font-bold flex flex-wrap justify-center"}>
@@ -80,7 +79,7 @@ const Home = () => {
                     ))}
                 </motion.div>
             </motion.section>
-            <motion.section id={"formations"}
+            <motion.section
                             ref={scrollRef}
                             initial={{opacity:0}}
                             whileInView={{opacity:1}}

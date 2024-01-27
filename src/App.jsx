@@ -5,7 +5,7 @@ import Layouts from "./layouts/layouts.jsx";
 import Home from "./layouts/home.jsx";
 import Header from "./layouts/header.jsx";
 import Footer from "./layouts/footer.jsx";
-
+import background from "./assets/bg-site.jpg";
 function App() {
     const router = createBrowserRouter([
         {
@@ -29,6 +29,7 @@ function App() {
     return (
         <>
             <Header/>
+            <img src={background} alt="background"  className="fixed top-0 left-0 w-screen h-screen -z-10"/>
             <RouterProvider router={router}/>
             <Footer/>
         </>

@@ -15,10 +15,12 @@ const Article = ({ title, description, loading }) => {
                     type: "tween",
                     ease: "easeInOut"
                 }}
-                className={"flex flex-col items-center gap-4 p-4 "}
+                className={"flex flex-col items-center gap-4 p-4"}
             >
                 <h3 className={"text-blue underline text-2xl font-bold mb-3"}>{title}</h3>
-                <p className={"text-blue font-medium mb-3"}>{description}</p>
+                {description.map((desc, index) => (
+                    <p key={index} className={"text-blue text-left font-bold"}>{desc}</p>
+                ))}
             </motion.div>
         ) : (
             <Loader primaryColor={"#152837"} secondaryColor={"#E69F34"} />

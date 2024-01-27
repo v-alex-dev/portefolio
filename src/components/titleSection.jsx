@@ -1,6 +1,6 @@
 const TitleSection = ({title, urlIcon}) => {
   return(
-      <div className={"w-72 bg-dark flex absolute  md:-top-6 rounded -top-16"}>
+      <div id={title} className={"w-72 bg-dark flex absolute top-0  rounded  "}>
           <div className={"bg-orange w-12 flex justify-center items-center p-2 rounded-l"}>
               <img src={urlIcon} alt={title}/>
           </div>

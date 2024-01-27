@@ -15,6 +15,9 @@
     }
 
 }
+*{
+  @apply font-raleway
+}
 
 span {
     @apply font-bold
@@ -28,7 +31,7 @@ span {
 }
 
 .link-hover-text:hover {
-    @apply text-light-orange scale-125 duration-500
+    @apply text-white scale-125 duration-500
 }
 
 .input-form {
@@ -68,4 +71,12 @@ span {
 
 .open{
   @apply w-20 flex flex-col gap-2 items-center justify-center p-4  z-50 h-20
+}
+
+.art-no-foward{
+  @apply grid grid-rows-2 justify-items-center items-center px-8 pt-5
+}
+
+.art-foward{
+  @apply grid grid-rows-2 justify-items-center items-center px-8 shadow-gray-500 shadow-md rounded-xl pt-5
 }
