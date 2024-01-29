@@ -12,7 +12,14 @@ export default {
         'light-orange':'#FFBD59',
         'light-gray':'#F1F1F1',
         'dark': '#000000',
-        'white': '#FFFFFF',
+        'white': '#FFFFF1',
+      },
+      backgroundImage: {
+        'bg-site': "url('./src/assets/bg-bureau.jpeg')",
+      },
+      fontFamily: {
+        raleway: ['Raleway', 'sans-serif'],
+        blackOpsOne: ['Black Ops One', 'cursive'],
       },
     },
   },

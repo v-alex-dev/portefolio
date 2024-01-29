@@ -5,20 +5,20 @@ const articleContent = [
     {
         parcours: "Technocité",
         url: 'https://technocite.be/',
-        description: 'Formation dynamique de 6 mois en développement .NET, mettant l\'accent sur le langage C# et' +
+        description: ['Formation dynamique de 6 mois en développement .NET, mettant l\'accent sur le langage C# et' +
             ' les fondements back-end tels que ASP, ADO, SQL, et Entity Framework Core. Expertise solide en ' +
-            'administration SQL Server, méthodologies Scrum et utilisation avancée de Git. Exploration du ' +
+            'administration SQL Server, méthodologies Scrum et utilisation avancée de Git.',' Exploration du ' +
             'développement cross-platform avec Xamarin et du cloud Azure. Projet final : conception et défense d\'une ' +
-            'application devant des professionnels, démontrant une maîtrise complète du développement web.'
+            'application devant des professionnels, démontrant une maîtrise complète du développement web.']
     },
     {
         parcours: "BeCode",
         url: 'https://becode.org/fr/les-formations/junior-developer/',
-        description: 'Après 7 mois de formation intensive en développement web chez BeCode, avec un focus sur les compétences ' +
-            'tant front-end que back-end. Initiation complète aux technologies modernes telles que React et ' +
-            'l\'exploration continue avec NEXT.JS pour renforcer mes compétences front-end. La formation a mis ' +
-            'l\'accent sur l\'apprentissage actif, le travail d\'équipe, la gestion de projets et le développement ' +
-            'de soft skills essentielles pour une carrière réussie en tant que développeur.'
+        description: ['Après 7 mois de formation intensive en développement web chez BeCode, avec un focus sur les compétences ' +
+        'tant front-end que back-end. Initiation complète aux technologies modernes telles que React et ' + -
+        'l\'exploration continue avec NEXT.JS pour renforcer mes compétences front-end.','La formation a mis ' +
+        'l\'accent sur l\'apprentissage actif, le travail d\'équipe, la gestion de projets et le développement ' +
+        'de soft skills essentielles pour une carrière réussie en tant que développeur.']
     }
 ];
 const ListFormations = ({loading}) => {
