@@ -10,7 +10,7 @@ const HamburgerMenu = () => {
 
   return (
     <div>
-      <div className='fixed top-0 right-0 bg-orange mr-3 mt-2 rounded-xl z-50'>
+      <div className='fixed top-0 right-0 bg-orange mr-4 mt-4 rounded-xl z-50'>
         <Hamburger toggled={isOpen} toggle={toggleMenu}/>
       </div>
 

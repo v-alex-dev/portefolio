@@ -71,7 +71,7 @@ const AboutMe = () => {
           <button
             type={"button"}
             onClick={toggleModal}
-            className={"rounded-full shadow shadow-light-orange p-2 bg-light-orange text-white font-bold active:bg-blue active:text-white"}>En savoir +</button>
+            className={"rounded-full shadow shadow-light-orange p-2 bg-light-orange text-blue font-bold active:bg-blue active:text-white"}>En savoir +</button>
         </motion.div>
       </div>
 
