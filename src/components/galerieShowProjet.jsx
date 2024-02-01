@@ -31,6 +31,7 @@ const galerieShowProjet = () => {
 	
 	
 	return (
-				<section></section>
+				<>
+				</>
 		);
 }

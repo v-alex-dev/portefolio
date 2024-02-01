@@ -41,8 +41,8 @@ const AboutMe = () => {
 
 
   return (
-    <div className="md:grid md:grid-cols-2 justify-items-center my-9 flex justify-center items-center ">
-      {screenWidth > maxMobileWidth && (
+    <div className="justify-items-center my-9 flex justify-center items-center ">
+      {/* {screenWidth > maxMobileWidth && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
           animate={{ opacity: 1, height: "auto" }}
@@ -62,7 +62,7 @@ const AboutMe = () => {
           transition={{delay:1.5, duration:1}}
           />
         </motion.div>
-      )}
+      )} */}
 
       <div className={"text-center py-10"}>
         <motion.div className={"flex flex-col items-center gap-8 p-4 text-xl font-bold text-blue"} >
