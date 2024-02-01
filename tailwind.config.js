@@ -19,7 +19,7 @@ export default {
       },
       fontFamily: {
         raleway: ['Raleway', 'sans-serif'],
-        blackOpsOne: ['Black Ops One', 'cursive'],
+        blackOpsOne: ['Black Ops One', 'system-ui'],
       },
     },
   },

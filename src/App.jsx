@@ -5,7 +5,7 @@ import Layouts from "./layouts/layouts.jsx";
 import Home from "./layouts/home.jsx";
 import Header from "./layouts/header.jsx";
 import Footer from "./layouts/footer.jsx";
-import background from "./assets/bg-site.jpg";
+import background from "./assets/28V_generated-3.jpg";
 function App() {
     const router = createBrowserRouter([
         {

@@ -49,7 +49,7 @@ const Home = () => {
     return (
         <div id="home" className={"w-full overflow-y-auto"}>
             <section 
-                     className={"rounded relative md:py-10 py-20 bg-opacity-50 bg-gray-400 "}>
+                     className={"rounded relative md:py-10 py-20 bg-opacity-10 bg-gray-400 "}>
                 <TitleSection title={"A propos"} urlIcon={"./descriptionTitle.svg"}/>
                 <AboutMe/>
 
@@ -66,7 +66,7 @@ const Home = () => {
                 </div>
             </motion.section>
             <motion.section
-                className={"relative py-20 bg-opacity-50 bg-gray-600 rounded"}>
+                className={"relative py-20 bg-opacity-10 bg-gray-600 rounded"}>
                 <TitleSection title={"Soft-Skills"} urlIcon={"./star-regular.svg"}/>
                 <motion.div
                     className={"pt-10 text-blue font-bold flex flex-wrap justify-center"}>
