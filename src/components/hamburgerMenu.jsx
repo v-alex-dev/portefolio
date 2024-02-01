@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Divide as Hamburger } from 'hamburger-react';
+import useTitleSection from '../hooks/useTitleSection';
 const HamburgerMenu = () => {
 
   const [isOpen, setIsOpen] = useState(false);
-  const [result, setResult] = useState([]);
+  const result = useTitleSection();
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
-  useEffect(() => {
-    const docH2 = document.querySelectorAll('h2');
-    setResult(Array.from(docH2).map(element => element.textContent));
-    
-  }, []);
+
 
   return (
     <div>

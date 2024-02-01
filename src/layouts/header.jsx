@@ -1,12 +1,37 @@
 import {motion} from "framer-motion";
 import HamburgerMenu from "../components/hamburgerMenu";
+import useTitleSection from "../hooks/useTitleSection";
 
 const Header = () => {
+  const titleSection = useTitleSection();
   const vens = ["V", "e", "n", "s"];
 
     return (
         <>
             <header className={"h-96 md:h-56 flex flex-col items-center justify-center  bg-blue"}>
+            <motion.div className="border-b w-full border-orange px-8">
+              <ul className="flex  text-orange md:gap-36 gap-20 font-bold justify-around">
+                {titleSection.map((element, index) => (
+                  <li key={index} className="w-full flex justify-between">
+                    
+                    <a href={"#" + element} className="">
+                      {element}
+                    </a>
+                    {index !== titleSection.length - 1 && (
+                      <motion.span 
+                        initial={{opacity:0}}
+                        animate={{opacity:1, rotate: 360}}
+                        transition={{
+                          delay:0.5 + index/4,
+                          duration: 1,
+                          type: "tween",
+                          ease: "easeInOut"
+                      }}
+                      className="">|</motion.span> )}
+                  </li>
+                ))}
+              </ul>
+            </motion.div>
             <HamburgerMenu/>
             <div className="flex items-center justify-between">
             <motion.div 
