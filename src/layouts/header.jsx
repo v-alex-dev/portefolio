@@ -1,12 +1,25 @@
 import {motion} from "framer-motion";
 import HamburgerMenu from "../components/hamburgerMenu";
 import useTitleSection from "../hooks/useTitleSection";
-import useWidthScreen from "../hooks/w-screen";
+import { useEffect, useState } from "react";
 
 const Header = () => {
-  const screenWidth = useWidthScreen();
+
   const titleSection = useTitleSection();
   const vens = ["V", "e", "n", "s"];
+  const [screenWidth, setScreenWidth] = useState(window.innerWidth);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreenWidth(window.innerWidth);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
     return (
         <>

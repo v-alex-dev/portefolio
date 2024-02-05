@@ -82,3 +82,37 @@ span {
 .art-foward{
   @apply grid grid-rows-2 justify-items-center items-center px-8 shadow-gray-500 shadow-md rounded-xl pt-5
 }
+
+.container{
+  @apply grid grid-cols-1 justify-items-center text-center gap-4 bg-slate-400 w-1/2 p-4 rounded-xl bg-opacity-10 text-2xl text-blue font-bold 
+}
+
+.show-galerie{
+  @apply flex gap-4 items-center justify-center
+}
+
+.btn-gal{
+  @apply bg-light-orange text-blue rounded-full p-2 font-black
+}
+
+.card-img-top{
+  @apply md:w-72 md:h-80 w-40 h-52 rounded-xl
+}
+
+.card{
+  @apply flex flex-col gap-4 items-center justify-center p-4
+}
+
+.card-title{
+  @apply text-3xl md:text-4xl font-bold my-4
+}
+
+.card-text{
+  @apply flex flex-col text-sm
+}
+.btn-primary{
+  @apply bg-light-orange text-blue rounded-full p-2 text-sm hover:shadow duration-150
+}
+.card-body{
+  @apply flex flex-col gap-4 items-center justify-center p-4
+}

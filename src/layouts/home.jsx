@@ -8,7 +8,7 @@ import Skills from "../components/skils.jsx";
 import inView from "in-view";
 import {currentSkills, casualSkills, softSkills} from "../utils/all-skills.js";
 import SoftSkills from "../components/soft-skills.jsx";
-import GalerieShowProjet from "../components/galerieShowProjet.jsx";
+import ShowProject from "../components/ShowProject.jsx";
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
@@ -53,7 +53,7 @@ const Home = () => {
                      className={"rounded relative md:py-10 py-20 bg-opacity-10 bg-gray-400 "}>
                 <TitleSection title={"A propos"} urlIcon={"./descriptionTitle.svg"}/>
                 <AboutMe/>
-                <GalerieShowProjet/>
+                <ShowProject/>
             </section>
            
             <motion.section

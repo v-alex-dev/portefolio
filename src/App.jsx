@@ -29,7 +29,7 @@ function App() {
     return (
         <>
             <Header/>
-            <img src={background} alt="background"  className="fixed top-0 left-0 w-screen h-screen -z-10"/>
+            <img src={background} alt="background"  className="fixed top-0 left-0 w-screen h-full -z-10"/>
             <RouterProvider router={router}/>
             <Footer/>
         </>

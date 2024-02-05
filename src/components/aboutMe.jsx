@@ -64,8 +64,8 @@ const AboutMe = () => {
         </motion.div>
       )} */}
 
-      <div className={"text-center py-10"}>
-        <motion.div className={"flex flex-col items-center gap-8 p-4 text-xl font-bold text-blue"} >
+      <div className={"text-center md:py-10"}>
+        <motion.div className={"flex flex-col items-center gap-8 p-4 md:text-xl font-bold text-blue"} >
           <p>Développeur junior à la recherche de vos futurs bugs !</p>
 
           <button

@@ -8,7 +8,7 @@ const Skills = ({skills, title, initialX, isFoward}) => {
    return(
 
           <div className="relative pt-20">
-              <h3 className={" text-dark opacity-30 text-4xl md:text-9xl font-extrabold text-center absolute md:-left-4 left-12 -top-3 scale-150 font-serif"}>{title}</h3>
+              <h3 className={" text-dark opacity-30 text-2xl md:text-9xl font-extrabold text-center absolute md:-left-4 left-12 -top-3 scale-150 font-serif"}>{title}</h3>
               <div className={"grid grid-cols-2 md:grid-cols-5 gap-16 justify-items-center"}>
                   {skills.map((skill, index) => (
                         <motion.article
