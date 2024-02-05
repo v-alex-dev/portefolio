@@ -10,10 +10,10 @@ const Header = () => {
 
     return (
         <>
-            <header className={"h-96 md:h-56 flex flex-col items-center justify-around  bg-blue"}>
+            <header className={"h-96  flex flex-col items-center justify-between  bg-blue pb-10"}>
             {screenWidth > 768 ? 
             (
-              <motion.div className="border-b w-full border-orange px-8 flex justify-start">
+              <motion.div className="border-b w-full border-orange px-8 flex justify-start mt-4">
               <ul className="grid grid-cols-4 w-full mb-4 text-center text-orange md:gap-36 gap-20 font-bold">
                 {titleSection.map((element, index) => (
                         <motion.li 
@@ -42,7 +42,7 @@ const Header = () => {
             )
             }
             
-            <div className="flex items-center justify-between">
+            <div className="flex flex-col items-center justify-between pb-28">
             <motion.div 
              initial={{x:-500, opacity:0}}
              animate={{x:0, opacity:1}}
@@ -53,13 +53,13 @@ const Header = () => {
              }}
             className="flex justify-between mr-8">
               <h1
-                className={"text-orange text-7xl w-2/3 text-center h-full mr-2"}> Alexandre
+                className={"text-orange text-5xl md:text-7xl w-2/3 text-center h-full mr-2"}> Alexandre
               </h1>
               <div className={"flex justify-center"}>
                 {vens.map((ven, index) => (
                   <motion.p
                     key={index}
-                    className={"text-7xl text-orange font-bold vens-name"}>{ven}</motion.p>
+                    className={"text-5xl md:text-7xl text-orange font-bold vens-name"}>{ven}</motion.p>
                 ))} 
                 </div>
             </motion.div>

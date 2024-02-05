@@ -2,7 +2,7 @@ import React from 'react';
 import {motion} from "framer-motion";
 
 
-const galerieShowProjet = () => {
+const GalerieShowProjet = () => {
 	const urlImgSrc = './src/assets/';
 	const projet = 
 	[
@@ -32,6 +32,27 @@ const galerieShowProjet = () => {
 	
 	return (
 				<>
+					{projet.map((projet, index) => {
+						<div key={index} id="galerie">
+							<div className="container">
+								<div className="row">
+									<div className="col-lg-4 col-md-6 col-sm-12">
+										<div className="card">
+											<img src={projet.urlImg} alt="" className="card-img-top" />
+											<div className="card-body">
+												<h5 className="card-title">{projet.name}</h5>
+												<p className="card-text">{projet.description}</p>
+												<a href={projet.urlDeploy} className="btn btn-primary">Voir le projet</a>
+												<a href={projet.urlGithub} className="btn btn-primary">Voir le code</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					})}
 				</>
-		);
+	);
 }
+
+export default GalerieShowProjet;

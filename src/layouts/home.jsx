@@ -5,9 +5,10 @@ import AboutMe from "../components/aboutMe.jsx";
 import TitleSection from "../components/titleSection.jsx";
 import ListFormations from "../components/listFormations.jsx";
 import Skills from "../components/skils.jsx";
-import inView from 'in-view';
+import inView from "in-view";
 import {currentSkills, casualSkills, softSkills} from "../utils/all-skills.js";
 import SoftSkills from "../components/soft-skills.jsx";
+import GalerieShowProjet from "../components/galerieShowProjet.jsx";
 
 const Home = () => {
     const [loading, setLoading] = useState(true);
@@ -47,13 +48,14 @@ const Home = () => {
 
 
     return (
-        <div id="home" className={"w-full overflow-y-auto"}>
+        <div id="home" className={"w-full"}>
             <section 
                      className={"rounded relative md:py-10 py-20 bg-opacity-10 bg-gray-400 "}>
                 <TitleSection title={"A propos"} urlIcon={"./descriptionTitle.svg"}/>
                 <AboutMe/>
-
+                <GalerieShowProjet/>
             </section>
+           
             <motion.section
                 initial={{opacity: 0}}
                 whileInView={{opacity:1}}

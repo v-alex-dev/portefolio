@@ -41,7 +41,7 @@ const AboutMe = () => {
 
 
   return (
-    <div className="justify-items-center my-9 flex justify-center items-center ">
+    <div className="my-9 flex justify-center items-center ">
       {/* {screenWidth > maxMobileWidth && (
         <motion.div
           initial={{ opacity: 0, height: 0 }}
