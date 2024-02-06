@@ -1,8 +1,27 @@
-import React, { useState } from 'react';
-
+import { useState } from 'react';
+import{ motion } from 'framer-motion';
 const ShowProject = () => {
+
+	const [isNext, setIsNext] = useState(true);
+	const initIsNext = {
+		opacity: 0,
+		x: 500
+	};
+	const initNotNext = {
+		opacity: 0,
+		x: -500
+	};
+	
+
 	const urlImgSrc = './src/assets/';
 	const projet = [
+		{
+			urlImg: urlImgSrc + 'cogip.png',
+			urlDeploy: 'https://cogip-ten.vercel.app/',
+			urlGithub: 'https://github.com/v-alex-dev/cogip',
+			name: 'Cogip',
+			description: 'Exercice solo, création d\'un site de gestion de factures deux groupes ont travaillé sur le même projet un groupe Back-end et un groupe Front-end',
+		},
 		{
 			urlImg: urlImgSrc + 'consolidation.jpg',
 			urlDeploy: 'https://v-alex-dev.github.io/consolidation/',
@@ -12,15 +31,15 @@ const ShowProject = () => {
 		},
 		{
 			urlImg: urlImgSrc + 'todo.jpg',
-			urlDeploy: 'https://okly2023.github.io/Project_Planner/',
-			urlGithub: 'https://github.com/Okly2023/Project_Planner?tab=readme-ov-file',
+			urlDeploy: '',
+			urlGithub: 'https://okly2023.github.io/Project_Planner/',
 			name: 'Project Planner',
 			description: 'Il a été conçu pour vous permettre de créer des projets qui affichent une liste de tâches à accomplir',
 		},
 		{
 			urlImg: urlImgSrc + 'imgbg-our-menu.jpg',
-			urlDeploy: 'https://bastien-venturi.github.io/Kababi-food/',
-			urlGithub: 'https://github.com/bastien-venturi/Kababi-food?tab=readme-ov-file',
+			urlDeploy: '',
+			urlGithub: 'https://bastien-venturi.github.io/Kababi-food/',
 			name: 'Kababi Food',
 			description: 'Exercice de groupe, création d\'un site de commande de nourriture en ligne',
 		},
@@ -31,6 +50,13 @@ const ShowProject = () => {
 			name: 'SunnySide',
 			description: 'Exercice solo, création d\'un site de présentation d\'une agence de design',
 		},
+		{
+			urlImg: urlImgSrc + 'AZ-store.png',
+			urlDeploy: '',
+			urlGithub: 'https://github.com/v-alex-dev/AZ-store',
+			name: 'AZ Store',
+			description: 'Exercice de groupe, création d\'un site de vente en ligne de chaussures',
+		},
 		
 	];
 
@@ -38,10 +64,12 @@ const ShowProject = () => {
 
 	const handleNext = () => {
 		setActiveIndex((prevIndex) => (prevIndex === projet.length - 1 ? 0 : prevIndex + 1));
+		setIsNext(true);
 	};
 
 	const handlePrev = () => {
 		setActiveIndex((prevIndex) => (prevIndex === 0 ? projet.length - 1 : prevIndex - 1));
+		setIsNext(false);
 	};
 
 	return (
@@ -49,17 +77,24 @@ const ShowProject = () => {
 			<button onClick={handlePrev} className='btn-gal'>{'<'}</button>
 			<div className="container">
 				<div className="row">
-					<div className="col-lg-4 col-md-6 col-sm-12">
+					<motion.div 
+							key={activeIndex}
+							initial={isNext ? initIsNext : initNotNext}
+							animate={{ x: 0, opacity: 1}}
+							transition={{ duration: 1 , type: 'spring', stiffness: 120}}
+							className="col-lg-4 col-md-6 col-sm-12">
 						<div className="card">
 							<img src={projet[activeIndex].urlImg} alt="" className="card-img-top" />
 							<div className="card-body">
 								<h5 className="card-title">{projet[activeIndex].name}</h5>
 								<p className="card-text">{projet[activeIndex].description}</p>
-								<a href={projet[activeIndex].urlGithub} className={projet[activeIndex].urlGithub.length < 2 ? "hidden" : "btn-primary" }>Voir le Projet</a>
-								<a href={projet[activeIndex].urlGithub} className="btn-primary">Voir le code</a>
+								<div className='card-btn'>
+									<a href={projet[activeIndex].urlDeploy} className={projet[activeIndex].urlDeploy.length < 2 ? "hidden" : "btn-primary" } target='_blank' rel='noreferrer'>Voir le Projet</a>
+									<a href={projet[activeIndex].urlGithub} className="btn-primary" target='_blank' rel='noreferrer'>Voir le code</a>
+								</div>
 							</div>
 						</div>
-					</div>
+					</motion.div>
 				</div>
 			</div>
 			<div>

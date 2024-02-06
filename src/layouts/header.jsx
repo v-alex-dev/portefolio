@@ -55,7 +55,7 @@ const Header = () => {
             )
             }
             
-            <div className="flex flex-col items-center justify-between pb-28">
+            <div className="flex flex-col md:flex-row items-center justify-between pb-28">
             <motion.div 
              initial={{x:-500, opacity:0}}
              animate={{x:0, opacity:1}}

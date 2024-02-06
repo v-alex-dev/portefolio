@@ -8,7 +8,7 @@ import { motion } from "framer-motion";
 const Footer = () => {
   return (
     <Router>
-      <footer className="bg-blue pb-5">
+      <footer className="bg-blue pb-5 border-t-2 border-orange">
         <div className="flex  justify-between max-w-4xl p-4 mx-auto text-sm md:p-8 w-1/2">
           <ul className="font-bold text-white flex flex-col md:flex-row  gap-4 items-center w-full justify-between">
             <li>
@@ -40,7 +40,7 @@ const Footer = () => {
             className="md:h-8 md:w-0.5 w-7 h-0.5 bg-orange rounded-full"></motion.div>
             <li className="">
               <div>
-                <a href="https://github.com/v-alex-dev" className="" target="_blank">
+                <a href="https://github.com/v-alex-dev" className="" target="_blank" rel="noreferrer">
                   <img
                     src={github}
                     alt="github"
@@ -56,7 +56,7 @@ const Footer = () => {
             className="md:h-8 md:w-0.5 w-7 h-0.5 bg-orange rounded-full"></motion.div>
             <li className="">
               <div>
-                <a href="https://www.linkedin.com/in/vens-alexandre/" className="w-full" target="_bank">
+                <a href="https://www.linkedin.com/in/vens-alexandre/" className="w-full" target="_bank" rel="noreferrer">
                   <img src={linkedin} alt="linkedin" className="md:w-10 w-8 bg-orange rounded-lg hover:bg-white duration-200" />
                 </a>
               </div>
