@@ -1,5 +1,12 @@
 import { useState } from 'react';
 import{ motion } from 'framer-motion';
+import cogipImg from '../assets/cogip.png';
+import consolidationImg from '../assets/consolidation.jpg';
+import todoImg from '../assets/todo.jpg';
+import kababiImg from '../assets/imgbg-our-menu.jpg';
+import sunnyImg from '../assets/sunny.jpg';
+import azImg from '../assets/AZ-store.png';
+
 const ShowProject = () => {
 
 	const [isNext, setIsNext] = useState(true);
@@ -12,46 +19,44 @@ const ShowProject = () => {
 		x: -500
 	};
 	
-
-	const urlImgSrc = './src/assets/';
 	const projet = [
 		{
-			urlImg: urlImgSrc + 'cogip.png',
+			urlImg: cogipImg,
 			urlDeploy: 'https://cogip-ten.vercel.app/',
 			urlGithub: 'https://github.com/v-alex-dev/cogip',
 			name: 'Cogip',
 			description: 'Exercice solo, création d\'un site de gestion de factures deux groupes ont travaillé sur le même projet un groupe Back-end et un groupe Front-end',
 		},
 		{
-			urlImg: urlImgSrc + 'consolidation.jpg',
+			urlImg: consolidationImg,
 			urlDeploy: 'https://v-alex-dev.github.io/consolidation/',
 			urlGithub: 'https://github.com/v-alex-dev/consolidation',
 			name: 'Consolidation',
 			description: 'Exercice solo, premier exercice html/css de la formation Becoode',
 		},
 		{
-			urlImg: urlImgSrc + 'todo.jpg',
+			urlImg: todoImg,
 			urlDeploy: '',
 			urlGithub: 'https://okly2023.github.io/Project_Planner/',
 			name: 'Project Planner',
 			description: 'Il a été conçu pour vous permettre de créer des projets qui affichent une liste de tâches à accomplir',
 		},
 		{
-			urlImg: urlImgSrc + 'imgbg-our-menu.jpg',
+			urlImg: kababiImg,
 			urlDeploy: '',
 			urlGithub: 'https://bastien-venturi.github.io/Kababi-food/',
 			name: 'Kababi Food',
 			description: 'Exercice de groupe, création d\'un site de commande de nourriture en ligne',
 		},
 		{
-			urlImg: urlImgSrc + 'sunny.jpg',
+			urlImg: sunnyImg,
 			urlDeploy: 'https://v-alex-dev.github.io/sunnyside-agency/',
 			urlGithub: 'https://github.com/v-alex-dev/sunnyside-agency',
 			name: 'SunnySide',
 			description: 'Exercice solo, création d\'un site de présentation d\'une agence de design',
 		},
 		{
-			urlImg: urlImgSrc + 'AZ-store.png',
+			urlImg: azImg,
 			urlDeploy: '',
 			urlGithub: 'https://github.com/v-alex-dev/AZ-store',
 			name: 'AZ Store',
@@ -84,7 +89,7 @@ const ShowProject = () => {
 							transition={{ duration: 1 , type: 'spring', stiffness: 120}}
 							className="col-lg-4 col-md-6 col-sm-12">
 						<div className="card">
-							<img src={projet[activeIndex].urlImg} alt="" className="card-img-top" />
+							<img src={projet[activeIndex].urlImg} alt={projet[activeIndex].name} className="card-img-top" />
 							<div className="card-body">
 								<h5 className="card-title">{projet[activeIndex].name}</h5>
 								<p className="card-text">{projet[activeIndex].description}</p>
